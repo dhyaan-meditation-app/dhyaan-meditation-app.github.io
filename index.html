@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Dhyaan is a meditation app designed to help you find peace and mindfulness through guided meditations and relaxation techniques.">
+    <meta name="keywords"
+        content="meditation, mindfulness, relaxation, calm, stress relief, dhyaan, meditation app, dhyaan meditation app, innerpeace, spirituality">
+
+    <meta property="og:title" content="Dhyaan - Your Ultimate Meditation App">
+    <meta property="og:description"
+        content="Dhyaan is a meditation app designed to help you find peace and mindfulness through guided meditations and relaxation techniques.">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/dhyaan-meditation-app/dhyaan-meditation-app.github.io/main/screenshot.png">
+    <meta property="og:url" content="https://dhyaan-meditation-app.github.io">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dhyaan">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dhyaan - Your Ultimate Meditation App">
+    <meta name="twitter:description"
+        content="Dhyaan is a meditation app designed to help you find peace and mindfulness through guided meditations and relaxation techniques.">
+    <meta name="twitter:image"
+        content="https://raw.githubusercontent.com/dhyaan-meditation-app/dhyaan-meditation-app.github.io/main/screenshot.png">
+    <meta name="twitter:url" content="https://dhyaan-meditation-app.github.io">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="favicon.ico">
+    <title>Dhyaan - Your Ultimate Meditation App</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="favicon.ico" alt="[Logo]" height="20"> Dhyaan</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="meditation_guide.html">Meditation guide</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="min-vh-100">
+        <div class="container mt-5 text-center p-3 border rounded p-lg-5 main-container container-very-dark-gray">
+            <div class="mb-4">
+                <h1>Plan your meditation session</h1>
+            </div>
+
+            <div class="mb-4 row">
+                <div class="col">
+                    <label for="hours" class="form-label">Hours</label>
+                    <input type="number" class="form-control" id="hours">
+                </div>
+                <div class="col">
+                    <label for="minutes" class="form-label">Minutes</label>
+                    <input type="number" class="form-control" id="minutes">
+                </div>
+                <div class="col">
+                    <label for="seconds" class="form-label">Seconds</label>
+                    <input type="number" class="form-control" id="seconds">
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label for="audio-selector">Select music for</label>
+                <select class="form-select" id="audio-selector">
+                    <option value="assets/static/audio/relaxation.mp3">Relaxation</option>
+                    <option value="assets/static/audio/focus_and_concentration.mp3">Focus and concentration</option>
+                    <option value="assets/static/audio/deep_meditation.mp3">Deep meditation</option>
+                    <option value="assets/static/audio/awareness_and_creativity.mp3">Awareness and creativity</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <button class="btn btn-success me-2" onclick="startSession()" id="start-btn"
+                    aria-label="Start meditation session">Start session</button>
+                <button class="btn btn-danger" onclick="stopSession()" id="stop-btn"
+                    aria-label="Stop meditation session">Stop session</button>
+            </div>
+
+            <div class="mb-4">
+                <h1 id="count-down-timer">0h 0m 0s</h1>
+            </div>
+
+            <p>Please see our recommended <a href="meditation_guide.html" target="_blank" rel="noopener noreferrer">meditation guide</a> before meditating for the first time.</p>
+        </div>
+
+        <div class="container mt-5 text-center">
+            <h1 class="mb-4">Why use our app?</h1>
+            <p>Dhyaan provides customizable meditation sessions where you can set a meditation session accordingly to
+                your need. We also provide specialized music for a specific function that stimulate your brain according
+                to the need like relaxation, focus etc. Also in our meditation guide we have provided a solid guide on
+                how to meditate and meditation techniques. No other meditation app provides this many features.</p>
+        </div>
+    </div>
+
+
+    <div class="mt-5 p-1">
+        <div class="container-fluid">
+            <div class="d-flex flex-wrap justify-content-between align-items-center py-4 my-4 border-top">
+                <div class="col-md-4 d-flex align-items-center">
+                    <span class="mb-4 mb-md-0 text-body-secondary">&#169; 2024 Dhyaan Meditation App</span>
+                </div>
+
+                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                    <li class="ms-4">
+                        <a class="text-body-secondary" href="https://github.com/dhyaan-meditation-app" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-github"></i>
+                        </a>
+                    </li>
+                    <li class="ms-4">
+                        <a class="text-body-secondary" href="https://youtube.com/@dhyaan-meditation-app" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                    </li>
+                    <li class="ms-4">
+                        <a class="text-body-secondary" href="https://medium.com/@dhyaan.meditation.app" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-medium"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="assets/js/index.js"></script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Application",
+            "name": "Dhyaan",
+            "description": "Dhyaan is a meditation app designed to help you find peace and mindfulness through guided meditations and relaxation techniques.",
+            "url": "https://dhyaan-meditation-app.github.io",
+            "applicationCategory": "Health",
+            "operatingSystem": ["Android, iOS", "Windows", "Mac", "Linux"],
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "0.00"
+            },
+            "applicationVersion": "1.0.0",
+            "developer": {
+              "@type": "Organization",
+              "name": "Dhyaan"
+            }
+          }          
+    </script>
+</body>
+
+</html>
