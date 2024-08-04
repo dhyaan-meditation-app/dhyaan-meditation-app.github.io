@@ -1,12 +1,14 @@
 const proxyUrl = "https://api.allorigins.win/get?url=";
 const feedUrl = "https://medium.com/feed/@dhyaan.meditation.app";
+const noBlogsPublished = document.getElementById("no-blogs-published");
+noBlogsPublished.display = "none";
 
 async function fetchFeed(feedUrl) {
     try {
         const response = await fetch(proxyUrl + encodeURIComponent(feedUrl));
 
         if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+            throw new Error("HTTP error! Status");
         }
 
         const data = await response.json();
@@ -17,7 +19,7 @@ async function fetchFeed(feedUrl) {
 
         const parserError = xmlDoc.querySelector('parsererror');
         if (parserError) {
-            throw new Error("Error parsing XML: " + parserError.textContent);
+            throw new Error("Error parsing XML");
         }
 
         const items = xmlDoc.getElementsByTagName("item");
@@ -54,7 +56,6 @@ async function fetchFeed(feedUrl) {
         return feedItems;
 
     } catch (error) {
-        console.error("Failed to fetch feed:", error);
         return [];
     }
 }
@@ -63,7 +64,7 @@ fetchFeed(feedUrl).then(feedItems => {
     const blogContainer = document.getElementById("blog-container");
     
     if (feedItems.length === 0) {
-        blogContainer.innerHTML = "No blogs have been published yet.";
+        blogContainer.style.display = "block";
         return;
     }
     
